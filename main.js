@@ -93,7 +93,7 @@ function MenuEjercicio(nro_ejercicio) {
             let focos=[];
             let nf = parseFloat(prompt("Ingrese cantidad de focos: "));
             for(var i=0;i<nf;i++){
-            focos[i]=parseInt(prompt("Ingrese color de foco donde: \r\nVerde es 1\r\nBlanco es 2\r\nRojo es 3"));
+            focos[i]=parseInt(prompt("Ingrese color de foco donde: \r\nVerde es 1\r\nRojo es 2\r\nBlanco es 3"));
             }
             alert(ej14_cantidadfocos(focos));
             break;
@@ -297,9 +297,9 @@ function ej14_cantidadfocos(focos){
 
 function ej15_votar(edad){
     if(edad>=18){
-        return "Ud puede votar en las elecciones";
+        return "Puede votar en las elecciones";
     }
     else{
-        return "Ud. no puede votar en las elecciones";
+        return "No puede votar en las elecciones";
     }
 }
