@@ -1,7 +1,7 @@
 
 function CallMenu() {
     let nro_ejercicio = parseInt(
-        prompt("Ingrese el numero de ejercicio que desea ejecutar: \r\n 1.suma \r\n 2.Promedio de Examenes \r\n 3.Calcular el area del rectangulo \r\n 4.Calcular el area del triangulo \r\n 5.Calcular el area del circulo \r\n 6.Calcular salario semanal \r\n 7.convertir pulgadas \r\n 8.Cambiar a dolares \r\n 9.Calcular Edad \r\n 10.Calcular persona de menor edad \r\n 11.Calcular bono por años de trabajo \r\n 12.Sueldo anual" )
+        prompt("Ingrese el numero de ejercicio que desea ejecutar: \r\n 1.suma \r\n 2.Promedio de Examenes \r\n 3.Calcular el area del rectangulo \r\n 4.Calcular el area del triangulo \r\n 5.Calcular el area del circulo \r\n 6.Calcular salario semanal \r\n 7.convertir pulgadas \r\n 8.Cambiar a dolares \r\n 9.Calcular Edad \r\n 10.Calcular persona de menor edad \r\n 11.Calcular bono por años de trabajo \r\n 12.Sueldo anual \r\n 13.Calificacion \r\n 14.Color de foco \r\n 15.Edad Para votar" )
     )
 
     if (isNaN(nro_ejercicio)) {
@@ -79,6 +79,27 @@ function MenuEjercicio(nro_ejercicio) {
         case 12:
             let añodesueldo = parseInt(prompt("año de sueldo"))
             alert(ej12_salariodelaño(añodesueldo))
+            break;
+
+        case 13:
+            let notas=[];
+            let n = parseFloat(prompt("Ingrese cantidad de alumnos: "));
+            for(var i=0;i<n;i++){
+            notas[i]= parseInt(prompt(`Ingrese nota del alumno ${i+1}: `));
+            }
+            alert(ej13_calificaciones(notas));
+            break;
+        case 14:
+            let focos=[];
+            let nf = parseFloat(prompt("Ingrese cantidad de focos: "));
+            for(var i=0;i<nf;i++){
+            focos[i]=parseInt(prompt("Ingrese color de foco donde: \r\nVerde es 1\r\nBlanco es 2\r\nRojo es 3"));
+            }
+            alert(ej14_cantidadfocos(focos));
+            break;
+        case 15:
+            let edadd=parseInt(prompt("\r\nIngrese su edad: "));
+            alert(ej15_votar(edadd));
             break;
         default:
             break;
@@ -233,5 +254,52 @@ function ej12_salariodelaño(añodesueldo) {
                 return "en seis años su sueldo es de $2657.3"
                 break;
         }
+    }
+}
+
+function ej13_calificaciones(notas){
+    let aprob=0;
+    let desaprob=0;
+    let respuesta=`Se ingresaron las siguientes notas: `;
+    for(var i=0;i<notas.length;i++){
+        if(notas[i]>10){
+            aprob++;
+        }
+        else{
+            desaprob++;
+        }
+        respuesta=respuesta+`\r\nNota ${i+1}: ${notas[i]}`;
+    }
+    respuesta=respuesta+`\r\nSe determina aprobado si la nota es mayor a 11 \r\nCantidad de aprobados es ${aprob} \r\nCantidad de desaprobados es ${desaprob}`;
+    return respuesta;
+}
+
+function ej14_cantidadfocos(focos){
+    let rojo=0;
+    let blanco=0;
+    let verde=0;
+    let respuesta="";
+    respuesta=respuesta+`Se ingresaron ${focos.length} focos`;
+    for(var i=0;i<focos.length;i++){
+        if(focos[i]===1){
+            verde++;
+        }
+        else if(focos[i]===2){
+            blanco++;
+        }
+        else{
+            rojo++;
+        }
+    }
+    respuesta=respuesta+`\r\nSe tiene los siguiente focos \r\nCantidad de focos Verde:  ${verde} \r\nCantidad de focos Blancos:  ${blanco}\r\nCantidad de focos Rojos:  ${rojo}`;
+    return respuesta;
+}
+
+function ej15_votar(edad){
+    if(edad>=18){
+        return "Ud puede votar en las elecciones";
+    }
+    else{
+        return "Ud. no puede votar en las elecciones";
     }
 }
