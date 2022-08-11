@@ -1,11 +1,18 @@
+
 body {  
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    background:black;
     font-family: monospace;
+    background-image: linear-gradient(135deg, #00b7d4,#505488,#2f3f80,#161569,#5a4894);
+    background-size: 100%;
+    background-size: 500%;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    animation: fanimado 10s infinite;
 }
 
 
@@ -32,16 +39,14 @@ button{
 .button_container {
     position: relative;
     display: inline-block;
-    padding: 15px 30px;
     letter-spacing: 4px;
-    font-size: 24px;
+    font-size: 14px;
     transition: 0.4s;
 }
 
 .button_container:hover{
 
     box-shadow: 0 0 0, 0 0 0, 0 0 70px goldenrod;
-    
     transition-delay: 0.8s;
     border-radius: 2rem;
 }
@@ -49,4 +54,16 @@ button{
 .button_container span{
     position: absolute;
     display: block;
+}
+
+@keyframes fanimado{
+    0%{
+        background-position:    0% 50%;
+    }
+    50%{
+        background-position:    100% 50%;
+    }
+    100%{
+        background-position:    0% 50%;
+    }
 }
